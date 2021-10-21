@@ -157,7 +157,7 @@ MonoBehaviour:
   Angle: 30
   BranchWeight: 30
   UpCoef: 0
-  ForwardCoef: 0.5
+  ForwardCoef: 0.02
   OBJ_Tronc: {fileID: 7816861951535566836, guid: 43f60e3415f3dc24480115e7199f2e16, type: 3}
   OBJ_Branche: {fileID: 1207465749987507401, guid: a71c663a40dd31440bc5d80106d0321b, type: 3}
   OBJ_BrancheFine: {fileID: 3150351235882007458, guid: 8d0039dd51eda4a47b2949c2f6a5826f, type: 3}
