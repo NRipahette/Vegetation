@@ -8,6 +8,7 @@ public class L_System : MonoBehaviour
     public int iterations;
     public string Alphabet;
     public Dictionary<char, string> Rules;
+    public int height;
     public float Angle;
     public float BranchWeight; // définis si les branches ont tendances à allez vers le haut ou non
     public float UpCoef; // Bazar
@@ -31,14 +32,20 @@ public class L_System : MonoBehaviour
 
         Rules = new Dictionary<char, string>();
         transformStack = new Stack<TransformInfo>();
+        //for (int i = 0; i < height; i++)
+        //{
+        //    Alphabet += "T";
+        //}
         finalSentence = Alphabet;
 
-        Rules.Add('T', "T[+CB][-CB][+CB]T");
-        Rules.Add('B', "B[+B[+D[++F]]" +
-            "[-B[-D[-F]]][++F][--F]]" +
-            "B[F][++F][--F]");
+        Rules.Add('T', "T[+//CB][**-CCB][+CB]T");
+        Rules.Add('B', "/B[*+B[+/D[+F]]" +
+            "[/-B[/-D[-F]]][+F][*-F]]" +
+            "*B[/F][/+F][*-F]");
         Rules.Add('C', "C");
-        Rules.Add('D', "D[+F][-F]");
+        Rules.Add('D', "*D[+F][-F]");
+
+
 
         for (int i = 0; i < iterations; i++)
         {
@@ -59,6 +66,11 @@ public class L_System : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //Alphabet = "";
+            //for (int i = 0; i < height; i++)
+            //{
+            //    Alphabet += "T";
+            //}
             finalSentence = Alphabet;
             transform.position = OriginalPos;
             transform.rotation = OriginalRot;
@@ -81,20 +93,22 @@ public class L_System : MonoBehaviour
     {
         foreach (char c in finalSentence)
         {
-
-            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, UnityEngine.Random.Range(0 - 180, 0 + 180) * UpCoef, transform.eulerAngles.z); // Rotation sur lui même pour que les branchent partent dans tous les sens 
+            //rotation sur Y
+             transform.rotation = Quaternion.Euler(transform.eulerAngles.x, UnityEngine.Random.Range(0 - 180, 0 + 180) * UpCoef, transform.eulerAngles.z); // Rotation sur lui même pour que les branchent partent dans tous les sens 
             //transform.Rotate(Vector3.up * UnityEngine.Random.Range(0 - 180, 0 + 180) * RandCoef); // Rotation sur lui même pour que les branchent partent dans tous les sens 
-            transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-360, 360) * ForwardCoef);
-            if (transform.rotation.z > 45)
-                transform.rotation =  Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y ,45);
-           // transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y , UnityEngine.Random.Range( -45, 45) * ForwardCoef);
+
+            //Rotation sur z
+            //transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-360, 360) * ForwardCoef);
+            //if (transform.rotation.z > 45)
+            //    transform.rotation =  Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y ,45);
+             transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y , UnityEngine.Random.Range( -45, 45) * ForwardCoef);
 
             switch (c)
             {
                 case 'T':
                     Vector3 TPosition = transform.position;
                     transform.Translate(Vector3.up * 2);
-                    transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-360, 360) * ForwardCoef);
+                    //transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-360, 360) * ForwardCoef);
                     instanciated.Add(Instantiate(OBJ_Tronc, TPosition, transform.rotation, null));
                     break;
                 case 'B':
@@ -128,15 +142,21 @@ public class L_System : MonoBehaviour
 
                 case '+':
                     transform.Rotate(Vector3.right * UnityEngine.Random.Range(BranchWeight + Angle - (Angle / 3), BranchWeight + Angle + (Angle / 3)));
-                    //transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-360, 360) * ForwardCoef);
-
-
                     break;
 
                 case '-':
                     transform.Rotate(Vector3.left * UnityEngine.Random.Range(BranchWeight + Angle - (Angle / 3), BranchWeight + Angle + (Angle / 3)));
-                    //transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-360, 360) * ForwardCoef);
                     break;
+
+
+                case '*':
+                    //transform.Rotate(Vector3.up * (130 + UnityEngine.Random.Range(-20, 40) * ForwardCoef));
+                    break;
+
+                case '/':
+                    //transform.Rotate(Vector3.down * (130 + UnityEngine.Random.Range(-20, 40) * ForwardCoef));
+                    break;
+
 
                 case '[':
                     transformStack.Push(new TransformInfo()
