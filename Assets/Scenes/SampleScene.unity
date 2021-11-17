@@ -152,13 +152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345cd291bf39e4cb635bc5da22b2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterations: 4
-  Alphabet: T
+  iterations: 6
+  Alphabet: tttT
   height: 4
-  Angle: 30
-  BranchWeight: 30
-  UpCoef: 0.5
-  ForwardCoef: 0.5
+  Angle: 0
+  BranchWeight: 60
+  EspaceBranchesPrincipale: 70
+  EspacePetiteBranche: 30
+  "R\xE9tr\xE9rcissement": 0
   OBJ_Tronc: {fileID: 7816861951535566836, guid: 43f60e3415f3dc24480115e7199f2e16, type: 3}
   OBJ_Branche: {fileID: 1207465749987507401, guid: a71c663a40dd31440bc5d80106d0321b, type: 3}
   OBJ_BrancheFine: {fileID: 3150351235882007458, guid: 8d0039dd51eda4a47b2949c2f6a5826f, type: 3}
@@ -249,17 +250,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345cd291bf39e4cb635bc5da22b2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterations: 4
-  Alphabet: T
+  iterations: 6
+  Alphabet: tttT
   height: 4
-  Angle: 30
-  BranchWeight: 30
-  UpCoef: 0.5
-  ForwardCoef: 0.5
+  Angle: 0
+  BranchWeight: 60
+  EspaceBranchesPrincipale: 70
+  EspacePetiteBranche: 30
+  "R\xE9tr\xE9rcissement": 0
   OBJ_Tronc: {fileID: 7816861951535566836, guid: 43f60e3415f3dc24480115e7199f2e16, type: 3}
   OBJ_Branche: {fileID: 1207465749987507401, guid: a71c663a40dd31440bc5d80106d0321b, type: 3}
   OBJ_BrancheFine: {fileID: 3150351235882007458, guid: 8d0039dd51eda4a47b2949c2f6a5826f, type: 3}
-  OBJ_Feuille: {fileID: 79025385941630945, guid: bab1ac96c8e250d4f9374d4203f48671, type: 3}
+  OBJ_Feuille: {fileID: 2260500863877878520, guid: 291be4713cd53564bb159606193e2f19, type: 3}
 --- !u!4 &508995114
 Transform:
   m_ObjectHideFlags: 0
@@ -444,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 53.49, y: 30.37, z: 0}
+  m_LocalPosition: {x: 73.2, y: 30.37, z: -13.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -479,17 +481,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345cd291bf39e4cb635bc5da22b2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterations: 4
-  Alphabet: T
+  iterations: 6
+  Alphabet: tttT
   height: 4
-  Angle: 30
-  BranchWeight: 30
-  UpCoef: 0.5
-  ForwardCoef: 0.5
+  Angle: 0
+  BranchWeight: 60
+  EspaceBranchesPrincipale: 70
+  EspacePetiteBranche: 30
+  "R\xE9tr\xE9rcissement": 0
   OBJ_Tronc: {fileID: 7816861951535566836, guid: 43f60e3415f3dc24480115e7199f2e16, type: 3}
   OBJ_Branche: {fileID: 1207465749987507401, guid: a71c663a40dd31440bc5d80106d0321b, type: 3}
   OBJ_BrancheFine: {fileID: 3150351235882007458, guid: 8d0039dd51eda4a47b2949c2f6a5826f, type: 3}
-  OBJ_Feuille: {fileID: 79025385941630945, guid: bab1ac96c8e250d4f9374d4203f48671, type: 3}
+  OBJ_Feuille: {fileID: 2260500863877878520, guid: 291be4713cd53564bb159606193e2f19, type: 3}
 --- !u!4 &1418779087
 Transform:
   m_ObjectHideFlags: 0
@@ -533,13 +536,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345cd291bf39e4cb635bc5da22b2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterations: 4
-  Alphabet: T
+  iterations: 6
+  Alphabet: tttT
   height: 4
-  Angle: 30
-  BranchWeight: 30
-  UpCoef: 0.5
-  ForwardCoef: 0.5
+  Angle: 0
+  BranchWeight: 60
+  EspaceBranchesPrincipale: 70
+  EspacePetiteBranche: 30
+  "R\xE9tr\xE9rcissement": 0
   OBJ_Tronc: {fileID: 7816861951535566836, guid: 43f60e3415f3dc24480115e7199f2e16, type: 3}
   OBJ_Branche: {fileID: 1207465749987507401, guid: a71c663a40dd31440bc5d80106d0321b, type: 3}
   OBJ_BrancheFine: {fileID: 3150351235882007458, guid: 8d0039dd51eda4a47b2949c2f6a5826f, type: 3}
