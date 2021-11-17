@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class L_System : MonoBehaviour
@@ -76,7 +77,12 @@ public class L_System : MonoBehaviour
         finalSentence = finalSentence.Replace("T", "");
         finalSentence = finalSentence.Remove(finalSentence.LastIndexOf('t'));
         RenderTree();
-
+        foreach (GameObject item in instanciated)
+        {
+            item.transform.SetParent(this.transform, true);
+        }
+        string localPath = AssetDatabase.GenerateUniqueAssetPath("Assets/" + gameObject.name + ".prefab");
+        PrefabUtility.SaveAsPrefabAssetAndConnect(gameObject, localPath, InteractionMode.UserAction);
         // T = Tronc 
         // t = Tronc nue
         // F = Feuille
@@ -138,6 +144,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject Tronc = Instantiate(OBJ_Tronc, TPosition, transform.rotation, null);
                         Tronc.transform.localScale *= Scale;
+                        //Tronc.transform.SetParent(this.transform, true);
                         instanciated.Add(Tronc);
                         break;
                     case 't':
@@ -145,6 +152,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject tronc = Instantiate(OBJ_Tronc, tPosition, transform.rotation, null);
                         tronc.transform.localScale = new Vector3( tScale, Scale, tScale);
+                        //tronc.transform.SetParent(this.transform, true);
                         tScale = tScale - tRétrércissement;
                         instanciated.Add(tronc);
                         break;
@@ -155,6 +163,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject Branch = Instantiate(OBJ_Branche, BPosition, transform.rotation, null);
                         Branch.transform.localScale *= Scale;
+                        //Branch.transform.SetParent(this.transform, true);
                         instanciated.Add(Branch);
                         break;
                     case 'b':
@@ -164,6 +173,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject branch = Instantiate(OBJ_Branche, bPosition, transform.rotation, null);
                         branch.transform.localScale *= Scale;
+                        //branch.transform.SetParent(this.transform, true);
                         instanciated.Add(branch);
                         break;
                     case 'c':
@@ -171,6 +181,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject cbranch = Instantiate(OBJ_Branche, cPosition, transform.rotation, null);
                         cbranch.transform.localScale *= Scale;
+                        //cbranch.transform.SetParent(this.transform, true);
                         instanciated.Add(cbranch);
                         break;
                     case 'C':
@@ -178,6 +189,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject Cbranch = Instantiate(OBJ_Branche, CPosition, transform.rotation, null);
                         Cbranch.transform.localScale *= Scale;
+                        //Cbranch.transform.SetParent(this.transform, true);
                         instanciated.Add(Cbranch);
                         break;
 
@@ -188,6 +200,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject Dbranch = Instantiate(OBJ_BrancheFine, DPosition, transform.rotation, null);
                         Dbranch.transform.localScale *= Scale;
+                        //Dbranch.transform.SetParent(this.transform, true);
                         instanciated.Add(Dbranch);
                         break;
                     case 'd':
@@ -197,6 +210,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject dbranch = Instantiate(OBJ_BrancheFine, dPosition, transform.rotation, null);
                         dbranch.transform.localScale *= Scale;
+                        //dbranch.transform.SetParent(this.transform, true);
                         instanciated.Add(dbranch);
                         break;
                     case 'F':
@@ -204,6 +218,7 @@ public class L_System : MonoBehaviour
                         transform.Translate(Vector3.up * 2 * Scale);
                         GameObject Fbranch = Instantiate(OBJ_Feuille, FPosition, transform.rotation, null);
                         Fbranch.transform.localScale *= Scale;
+                        //Fbranch.transform.SetParent(this.transform,true);
                         instanciated.Add(Fbranch);
                         break;
 
