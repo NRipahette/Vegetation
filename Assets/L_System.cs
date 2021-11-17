@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class L_System : MonoBehaviour
 {
+    public bool SaveAsPrefab;
     public float iterations;
     public string Alphabet;
     public Dictionary<char, string> Rules;
@@ -44,13 +45,6 @@ public class L_System : MonoBehaviour
         //}
         finalSentence = Alphabet;
 
-        //Rules.Add('T', "t[+B][-B][&+B][&-B]tT");
-        //Rules.Add('t', "t");
-        //Rules.Add('B', "b[&DF][&&&DF]B");
-        //Rules.Add('b', "b");
-        //Rules.Add('C', "C");
-        //Rules.Add('D', "d[+F][-F]");
-
         Rules.Add('T', "t[+C][-C][&+C][&-C][&&+C][&&-C]t[T]");
         Rules.Add('t', "t");
         Rules.Add('C', "c[&BF][&&&BF][C]");
@@ -81,8 +75,11 @@ public class L_System : MonoBehaviour
         {
             item.transform.SetParent(this.transform, true);
         }
-        string localPath = AssetDatabase.GenerateUniqueAssetPath("Assets/" + gameObject.name + ".prefab");
-        PrefabUtility.SaveAsPrefabAssetAndConnect(gameObject, localPath, InteractionMode.UserAction);
+        if (SaveAsPrefab)
+        {
+            string localPath = AssetDatabase.GenerateUniqueAssetPath("Assets/" + gameObject.name + ".prefab");
+            PrefabUtility.SaveAsPrefabAssetAndConnect(gameObject, localPath, InteractionMode.UserAction);
+        }
         // T = Tronc 
         // t = Tronc nue
         // F = Feuille
