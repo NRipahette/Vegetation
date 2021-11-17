@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &84132673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,10 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345cd291bf39e4cb635bc5da22b2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SaveAsPrefab: 0
   iterations: 8
   Alphabet: tT
-  height: 4
-  Angle: 0
   BranchWeight: 60
   EspaceBranchesPrincipale: 70
   EspacePetiteBranche: 30
@@ -249,10 +248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345cd291bf39e4cb635bc5da22b2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SaveAsPrefab: 0
   iterations: 8
   Alphabet: tT
-  height: 4
-  Angle: 0
   BranchWeight: 60
   EspaceBranchesPrincipale: 70
   EspacePetiteBranche: 30
@@ -479,13 +477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345cd291bf39e4cb635bc5da22b2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterations: 8
-  Alphabet: tT
-  height: 4
-  Angle: 0
-  BranchWeight: 60
+  SaveAsPrefab: 0
+  iterations: 6
+  Alphabet: tttT
+  BranchWeight: 80
   EspaceBranchesPrincipale: 70
-  EspacePetiteBranche: 30
+  EspacePetiteBranche: 40
   OBJ_Tronc: {fileID: 7816861951535566836, guid: 43f60e3415f3dc24480115e7199f2e16, type: 3}
   OBJ_Branche: {fileID: 1207465749987507401, guid: a71c663a40dd31440bc5d80106d0321b, type: 3}
   OBJ_BrancheFine: {fileID: 3150351235882007458, guid: 8d0039dd51eda4a47b2949c2f6a5826f, type: 3}
@@ -520,7 +517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1802096623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,10 +530,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345cd291bf39e4cb635bc5da22b2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SaveAsPrefab: 0
   iterations: 8
   Alphabet: tT
-  height: 4
-  Angle: 0
   BranchWeight: 60
   EspaceBranchesPrincipale: 70
   EspacePetiteBranche: 30
